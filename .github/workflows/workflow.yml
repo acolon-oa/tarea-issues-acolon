@@ -1,0 +1,21 @@
+name: CI HTML
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  validate-html:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: List files (prueba básica)
+        run: ls -R .
+
+      - name: Validar estructura mínima
+        run: |
